@@ -4,6 +4,9 @@
 # dependencies
 node_modules
 
+# build
+build
+
 # misc
 yarn-error.log
 
