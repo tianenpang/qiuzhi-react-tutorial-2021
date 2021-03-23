@@ -48,4 +48,4 @@ yarn start
 
 ## 📜 License
 
-&nbsp;[MIT](https://github.com/TianenPang/qiuzhi-react-2021/blob/main/LICENSE) © [TianenPang](https://github.com/TianenPang)
+&nbsp;[MIT](https://github.com/TianenPang/qiuzhi-react-tutorial-2021/blob/main/LICENSE) © [TianenPang](https://github.com/TianenPang)
