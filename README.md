@@ -38,6 +38,12 @@ git clone https://github.com/TianenPang/qiuzhi-react-tutorial-2021.git
 cd qiuzhi-react-tutorial-2021
 ```
 
+&nbsp;install dependencies
+
+```bash
+yarn install
+```
+
 &nbsp;start dev server
 
 ```bash
