@@ -7,7 +7,7 @@
 
 .brand-title {
   display: block;
-  font-size: 24px;
+  font-size: 22px;
   transition: .3s;
   text-align: center;
   font-weight: bolder;
@@ -16,6 +16,10 @@
 .brand-title:hover {
   cursor: pointer;
   color: hsla(0, 0%, 100%, 1);
+}
+
+.ant-layout-header {
+  padding: 0 20px !important;
 }
 
 .header-menu {
