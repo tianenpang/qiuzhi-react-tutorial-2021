@@ -8,12 +8,12 @@ const NavBar: React.FC = (): JSX.Element => {
   return (
     <Layout.Header className='header'>
       <Row className='header-row' align='middle'>
-        <Col span='4'>
-          <span className='brand-title'>Brand Title</span>
+        <Col xl={ 4 } lg={ 4 } md={ 4 } sm={ 6 } xs={ 10 }>
+          <span className='brand-title'>Brand title</span>
         </Col>
-        <Col span='20'>
+        <Col xl={ 20 } lg={ 20 } md={ 20 } sm={ 18 } xs={ 14 }>
           <Row>
-            <Col span='24'>
+            <Col span={ 24 }>
               <Menu className='header-menu' mode="horizontal">
                 <Menu.Item className='header-menu-item'>Home</Menu.Item>
                 <Menu.Item className='header-menu-item'>New Blog</Menu.Item>
