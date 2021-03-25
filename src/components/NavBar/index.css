@@ -1,7 +1,30 @@
-.navbar {
-
+.header {
+  overflow: hidden;
+  background: #141414 !important;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 65%);
 }
 
-.links {
+.brand-title {
+  display: block;
+  font-size: 24px;
+  transition: .3s;
+  text-align: center;
+  font-weight: bolder;
+}
 
+.brand-title:hover {
+  cursor: pointer;
+  color: hsla(0, 0%, 100%, 1);
+}
+
+.header-menu {
+  user-select: none;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+.header-menu-item {
+  top: 0 !important;
+  border: 0 !important;
+  margin-top: 0 !important;
 }
