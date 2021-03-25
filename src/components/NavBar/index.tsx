@@ -8,14 +8,18 @@ const NavBar: React.FC = (): JSX.Element => {
   return (
     <Layout.Header className='header'>
       <Row className='header-row' align='middle'>
-        <Col span={ 4 }>
+        <Col span='4'>
           <span className='brand-title'>Brand Title</span>
         </Col>
-        <Col span={ 20 }>
-          <Menu className='header-menu' mode="horizontal">
-            <Menu.Item className='header-menu-item'>Home</Menu.Item>
-            <Menu.Item className='header-menu-item'>New Blog</Menu.Item>
-          </Menu>
+        <Col span='20'>
+          <Row>
+            <Col span='24'>
+              <Menu className='header-menu' mode="horizontal">
+                <Menu.Item className='header-menu-item'>Home</Menu.Item>
+                <Menu.Item className='header-menu-item'>New Blog</Menu.Item>
+              </Menu>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <GithubCorner
