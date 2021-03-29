@@ -1,13 +1,17 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
 
 const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element => {
 
-  const { title, data }: IBlogListProps = props;
+  const { title, data, onDelete }: IBlogListProps = props;
 
   return (
     <>
-      <h2 style={ { textAlign: 'center' } }>
+      <h2 style={ {
+        textAlign: 'center',
+        marginBottom: '24px'
+      } }>
         { title }
       </h2>
       <Row wrap gutter={ [ 12, 24 ] }>
@@ -24,7 +28,8 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element 
               bordered
               hoverable
               title={ blog.title }
-              extra={ blog.author }
+              extra={ `by - ${ blog.author }` }
+              actions={ [ <DeleteOutlined key='delete' onClick={ () => onDelete(blog.id) }/> ] }
             >
               { blog.body }
             </Card>
@@ -38,6 +43,7 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element 
 interface IBlogListProps {
   title: string;
   data: IBlog[];
+  onDelete: (id: number) => void;
 }
 
 export default BlogList;
