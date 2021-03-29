@@ -7,7 +7,6 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-
 [*.{ts, tsx}]
 ij_typescript_force_quote_style = true
 ij_typescript_use_double_quotes = false
