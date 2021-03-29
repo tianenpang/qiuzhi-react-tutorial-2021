@@ -10,13 +10,21 @@ const Page: React.FC = (): JSX.Element => {
       <NavBar/>
       <Row align='middle'>
         <Col
-          xs={ { span: 22, offset: 1 } }
-          sm={ { span: 20, offset: 2 } }
-          md={ { span: 18, offset: 3 } }
-          lg={ { span: 18, offset: 3 } }
           xl={ { span: 16, offset: 4 } }
+          lg={ { span: 18, offset: 3 } }
+          md={ { span: 18, offset: 3 } }
+          sm={ { span: 20, offset: 2 } }
+          xs={ { span: 22, offset: 1 } }
         >
-          <Layout.Content style={ { margin: '50px auto', padding: '50px 24px', border: '1px dashed rgb(48, 48, 48)' } }>
+          <Layout.Content
+            style={ {
+              margin: '50px auto',
+              borderRadius: '2px',
+              padding: '50px 24px',
+              background: '#303030',
+              border: '1px dashed rgb(48, 48, 48)'
+            } }
+          >
             <Home/>
           </Layout.Content>
         </Col>
