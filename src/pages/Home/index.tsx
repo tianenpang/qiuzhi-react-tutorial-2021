@@ -4,7 +4,7 @@ import './index.css';
 
 const Home: React.FC = (): JSX.Element => {
 
-  const [ blogs ] = useState<IBlog[]>([
+  const [ blogs, setBlogs ] = useState<IBlog[]>([
     {
       id: 1,
       author: 'admin',
@@ -38,9 +38,13 @@ const Home: React.FC = (): JSX.Element => {
     }
   ]);
 
+  const deleteBlogHandler: Function = (id: number): void => {
+    setBlogs([ ...blogs.filter(blog => blog.id !== id) ]);
+  };
+
   return (
     <div className='home'>
-      <BlogList title='All Blogs' data={ blogs }/>
+      <BlogList title='All Blogs' data={ blogs } onDelete={ id => deleteBlogHandler(id) }/>
     </div>
   );
 };
