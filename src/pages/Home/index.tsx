@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { message } from 'antd';
+import { notification } from 'antd';
 import BlogList from '../../components/BlogList';
 import './index.css';
 
@@ -15,12 +15,23 @@ const Home: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     fetch('https://run.mocky.io/v3/6802ea8b-eba8-4e4d-bac1-ff468802981a')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw Error('Could not fetch the data from the resource');
+        return response.json();
+      })
       .then(data => {
         setBlogs(data.blogs);
         setLoading(false);
-      }).catch(() => message.warning('get some error on fetch data.'));
+      }).catch(error => onFetchErrorHandler(error.message));
   }, []);
+
+  const onFetchErrorHandler = (description: string): void => {
+    notification.warning({
+      placement: 'bottomRight',
+      message: 'Data Fetching Error',
+      description: <span>description: { description }.</span>
+    });
+  };
 
   return (
     <div className='home'>
