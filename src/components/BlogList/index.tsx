@@ -12,7 +12,7 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element 
         textAlign: 'center',
         marginBottom: '24px'
       } }>
-        { title } - { data?.length }
+        { title }
       </h2>
       <Row wrap gutter={ [ 12, 24 ] }>
         { loading
