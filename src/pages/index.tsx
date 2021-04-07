@@ -1,8 +1,9 @@
 import React from 'react';
 import { Col, Layout, Row } from 'antd';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import Home from './Home';
+import NavBar from '../components/NavBar';
+import Create from '../components/Create';
 
 const Page: React.FC = (): JSX.Element => {
 
@@ -28,8 +29,11 @@ const Page: React.FC = (): JSX.Element => {
               } }
             >
               <Switch>
-                <Route path='/'>
+                <Route exact path='/'>
                   <Home/>
+                </Route>
+                <Route exact path='/create'>
+                  <Create/>
                 </Route>
               </Switch>
             </Layout.Content>
