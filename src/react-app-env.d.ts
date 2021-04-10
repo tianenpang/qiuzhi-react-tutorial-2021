@@ -6,3 +6,7 @@ declare interface IBlog {
   title: string;
   author: string;
 }
+
+declare interface IArticleParam {
+  id: string;
+}
