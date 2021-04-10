@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Card, Col, Divider, Row, Space, Typography } from 'antd';
-import Loading from '../Loading';
 import { useFetch } from '../../hooks';
 import { fetchErrorHandler } from '../../utils';
 
@@ -20,7 +19,7 @@ const BlogDetails: React.FC = (): JSX.Element => {
   }, [ error ]);
 
   const ArticleTypography = () => (
-    <Card>
+    <Card loading={ loading }>
       <Typography>
         <Title level={ 2 }>{ data?.title }</Title>
         <Space direction='vertical' size='small'>
@@ -45,7 +44,7 @@ const BlogDetails: React.FC = (): JSX.Element => {
         lg={ { span: 18, offset: 3 } }
         md={ { span: 18, offset: 3 } }
       >
-        { loading ? <Loading/> : <ArticleTypography/> }
+        <ArticleTypography/>
       </Col>
     </Row>
   );
