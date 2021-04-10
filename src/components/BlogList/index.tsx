@@ -1,10 +1,14 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
+import { useHistory } from 'react-router-dom';
 import Loading from '../Loading';
 
 const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element => {
 
+  const history = useHistory();
   const { title, data, loading }: IBlogListProps = props;
+
+  const cardClickHandler = (id: number): void => history.push(`/article/${ id }`);
 
   return (
     <>
@@ -31,6 +35,7 @@ const BlogList: React.FC<IBlogListProps> = (props: IBlogListProps): JSX.Element 
                 hoverable
                 title={ blog.title }
                 extra={ `by - ${ blog.author }` }
+                onClick={ () => cardClickHandler(blog.id) }
               >
                 { blog.body }
               </Card>
