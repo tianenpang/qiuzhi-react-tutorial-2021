@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { notification } from 'antd';
 import { useFetch } from '../../hooks';
+import { fetchErrorHandler } from '../../utils';
 import BlogList from '../../components/BlogList';
 import './index.css';
 
@@ -12,11 +12,7 @@ const Home: React.FC = (): JSX.Element => {
   const [ data, loading, error ] = useFetch<{ blogs: IBlog[] }>(blogs_api);
 
   useEffect(() => {
-    error && notification.warning({
-      placement: 'bottomRight',
-      message: 'Data Fetching Error',
-      description: <span>description: { error }.</span>
-    });
+    error && fetchErrorHandler(error);
   }, [ error ]);
 
   return (
