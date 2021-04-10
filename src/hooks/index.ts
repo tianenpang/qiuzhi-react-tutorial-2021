@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-export const useFetch = <D>(url: string, { onError }: { onError: (message: string) => void }): [ data: D | undefined, loading: boolean ] => {
+export const useFetch = <D>(url: string): [ data: D | undefined, loading: boolean, error: string ] => {
 
   const [ data, setData ] = useState<D>();
+  const [ error, setError ] = useState<string>('');
   const [ loading, setLoading ] = useState<boolean>(true);
 
   useEffect(() => {
@@ -15,8 +16,8 @@ export const useFetch = <D>(url: string, { onError }: { onError: (message: strin
         setData(data);
         setLoading(false);
       })
-      .catch(error => onError(error.message));
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+      .catch(error => setError(error.message));
+  }, [ url ]);
 
-  return [ data, loading ];
+  return [ data, loading, error ];
 };
