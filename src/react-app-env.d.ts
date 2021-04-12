@@ -13,5 +13,6 @@ declare interface IArticleParam {
 
 declare interface IBlogForm {
   title: string;
+  author: string;
   content: string;
 }
