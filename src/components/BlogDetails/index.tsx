@@ -40,6 +40,7 @@ const BlogDetails: React.FC = (): JSX.Element => {
   return (
     <Row>
       <Col
+        style={ { width: '100%' } }
         xl={ { span: 16, offset: 4 } }
         lg={ { span: 18, offset: 3 } }
         md={ { span: 18, offset: 3 } }
