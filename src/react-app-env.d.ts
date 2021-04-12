@@ -10,3 +10,8 @@ declare interface IBlog {
 declare interface IArticleParam {
   id: string;
 }
+
+declare interface IBlogForm {
+  title: string;
+  content: string;
+}
