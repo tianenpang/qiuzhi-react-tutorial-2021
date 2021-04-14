@@ -13,14 +13,14 @@ const NavBar: React.FC = (): JSX.Element => {
     <Layout.Header className='header'>
       <Row className='header-row' align='middle'>
         <Col xl={ 4 } lg={ 4 } md={ 4 } sm={ 6 } xs={ 10 }>
-          <span className='brand-title'>
+          <span className='brand-title' onClick={ () => history.push('/') }>
             Brand title
           </span>
         </Col>
         <Col xl={ 20 } lg={ 20 } md={ 20 } sm={ 18 } xs={ 14 }>
           <Row>
             <Col span={ 24 }>
-              <Menu className='header-menu' mode='horizontal' defaultSelectedKeys={ [ 'nav-' + pathname ] }>
+              <Menu className='header-menu' mode='horizontal' defaultSelectedKeys={ [ 'nav-' + pathname ] } selectedKeys={ [ 'nav-' + pathname ] }>
                 <Menu.Item
                   key='nav-/'
                   className='header-menu-item'
