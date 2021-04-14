@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Col, Form, Input, message, Row, Select, Space } from 'antd';
 import { fetchErrorHandler } from '../../utils';
+import { useHistory } from 'react-router-dom';
 
 const form_layout = {
   input: {
@@ -14,6 +15,7 @@ const form_layout = {
 
 const Create: React.FC = (): JSX.Element => {
 
+  const history = useHistory();
   const [ form ] = Form.useForm();
   const [ loading, setLoading ] = useState<boolean>(false);
 
@@ -32,6 +34,7 @@ const Create: React.FC = (): JSX.Element => {
       setLoading(false);
       if (data.success) {
         formResetHandler();
+        history.push('/');
         return message.success('A New Blog Post Success');
       }
     }).catch(error => {
