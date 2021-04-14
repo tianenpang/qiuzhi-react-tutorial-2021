@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import NavBar from '../components/NavBar';
 import Create from './Create';
-import BlogDetails from '../components/BlogDetails';
+import BlogDetails from './BlogDetails';
 
 const Page: React.FC = (): JSX.Element => {
 
