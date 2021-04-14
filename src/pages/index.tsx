@@ -3,7 +3,7 @@ import { Col, Layout, Row } from 'antd';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import NavBar from '../components/NavBar';
-import Create from '../components/Create';
+import Create from './Create';
 import BlogDetails from '../components/BlogDetails';
 
 const Page: React.FC = (): JSX.Element => {
