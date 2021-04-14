@@ -7,16 +7,24 @@ export const useFetch = <D>(url: string): [ data: D | undefined, loading: boolea
   const [ loading, setLoading ] = useState<boolean>(true);
 
   useEffect(() => {
+    let isUnmounted = false;
     fetch(url)
       .then(response => {
-        if (!response.ok) throw Error('Could not fetch the data from the resource');
-        return response.json();
+        if (!isUnmounted) {
+          if (!response.ok) throw Error('Could not fetch the data from the resource');
+          return response.json();
+        }
       })
       .then(data => {
-        setData(data);
-        setLoading(false);
+        if (!isUnmounted) {
+          setData(data);
+          setLoading(false);
+        }
       })
       .catch(error => setError(error.message));
+    return () => {
+      isUnmounted = true;
+    };
   }, [ url ]);
 
   return [ data, loading, error ];
