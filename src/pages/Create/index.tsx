@@ -28,7 +28,7 @@ const Create: React.FC = (): JSX.Element => {
       },
       body: JSON.stringify(fields)
     }).then(response => {
-      if (!response.ok) throw Error('Could not fetch the data from the resource');
+      if (!response.ok) throw Error('Could not post the data from the resource');
       return response.json();
     }).then(data => {
       setLoading(false);
