@@ -2,9 +2,10 @@ import React from 'react';
 import { Col, Layout, Row } from 'antd';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import NavBar from '../components/NavBar';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
+import NavBar from '../components/NavBar';
+import NotFound from './Exception/NotFound';
 
 const Page: React.FC = (): JSX.Element => {
 
@@ -38,6 +39,9 @@ const Page: React.FC = (): JSX.Element => {
                 </Route>
                 <Route exact path='/article/:id'>
                   <BlogDetails/>
+                </Route>
+                <Route path='*'>
+                  <NotFound/>
                 </Route>
               </Switch>
             </Layout.Content>
